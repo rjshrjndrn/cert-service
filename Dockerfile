@@ -7,9 +7,6 @@ RUN apk update \
     && apk --no-cache add chromium \
     && mkdir -p /home/sunbird/
 RUN apk add font-noto-gujarati font-noto-kannada font-noto-avestan font-noto-osage font-noto-kayahli font-noto-oriya font-noto-telugu font-noto-tamil font-noto-bengali font-noto-malayalam font-noto-arabic font-noto-extra
-RUN apk --no-cache add msttcorefonts-installer fontconfig \
-    && update-ms-fonts \
-    && fc-cache -f
 ADD ./cert-service-1.2.0-dist.zip /home/sunbird/
 RUN unzip /home/sunbird/cert-service-1.2.0-dist.zip -d /home/sunbird/
 RUN chown -R sunbird:sunbird /home/sunbird
